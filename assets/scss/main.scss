@@ -1,0 +1,35 @@
+@import "reset.scss";
+$wrapper: 1440px;
+a {
+  text-decoration: none;
+}
+button,
+a {
+  cursor: pointer;
+}
+hr {
+  margin: 0;
+}
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+body {
+  font-family: "Satoshi-Regular";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "ClashDisplay-Regular";
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

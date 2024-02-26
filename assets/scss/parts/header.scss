@@ -1,0 +1,79 @@
+header {
+  & > div {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    button {
+      position: absolute;
+      top: 26px;
+      left: 28px;
+      background: none;
+      border: none;
+      background-image: url("../img/Icons/Search.png");
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+    }
+    h2 {
+      color: #22202e;
+      font-family: "ClashDisplay-Regular";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      a {
+        &:active {
+          color: #22202e;
+        }
+        &:hover {
+          color: #22202e;
+        }
+        &:visited {
+          color: #22202e;
+        }
+      }
+    }
+    & > div {
+      display: flex;
+      gap: 18px;
+      position: absolute;
+      top: 26px;
+      right: 28px;
+      a {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+      }
+      .cart-btn {
+        background-image: url("../img/Icons/Shopping-cart.png");
+      }
+      .user-btn {
+        background-image: url("../img/Icons/User-avatar.png");
+      }
+    }
+  }
+  hr {
+    margin: 0 auto;
+    border-color: rgba(0, 0, 0, 0.1);
+    width: calc(100% - 54px);
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      gap: 44px;
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+      li {
+        a {
+          font-size: 16px;
+          color: #726e8d;
+        }
+      }
+    }
+  }
+}
