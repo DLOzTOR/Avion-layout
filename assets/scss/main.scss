@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "ClashDisplay-Regular";
+  font-family: "ClashDisplay-Light";
 }
 .unselectable {
   -webkit-touch-callout: none;
@@ -32,4 +32,77 @@ h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+button.view-collection,
+input[type="submit"] {
+  cursor: pointer;
+  font-family: "Satoshi-Regular";
+  color: $dark-primary;
+  background: $light-gray;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 16px 32px;
+  border: 0;
+  border-width: 0;
+  transition: 0.3s;
+  &:hover {
+    background-color: $border-gray;
+  }
+  &:active {
+    background-color: $border-dark;
+  }
+}
+input.email {
+  padding: 17px 32px;
+  border: none;
+  outline: none;
+  color: $dark-primary;
+  width: 354px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.4s;
+  &::placeholder {
+    opacity: 0.2;
+  }
+  &:focus {
+    &::placeholder {
+      color: $white;
+      opacity: 1;
+    }
+    background: $border-dark;
+  }
+}
+article.product {
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.03);
+  }
+  img {
+    width: 305px;
+    height: 375px;
+  }
+  h4,
+  p {
+    margin: 0;
+    color: $dark-primary;
+  }
+  h4 {
+    margin-top: 24px;
+    color: $dark-primary;
+    font-family: "ClashDisplay-Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  p {
+    margin-top: 8px;
+    font-family: "Satoshi-Regular";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
 }
