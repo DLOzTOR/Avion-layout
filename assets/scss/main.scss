@@ -1,5 +1,7 @@
 @import "reset.scss";
 $wrapper: 1440px;
+@import "./parts/header.scss";
+@import "./parts/footer.scss";
 a {
   text-decoration: none;
 }
