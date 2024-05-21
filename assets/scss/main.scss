@@ -1,7 +1,7 @@
-@import "reset.scss";
-$wrapper: 1440px;
+@import "./base/reset.scss";
 @import "./parts/header.scss";
 @import "./parts/footer.scss";
+@import "./base/variables.scss";
 a {
   text-decoration: none;
 }
@@ -13,7 +13,7 @@ hr {
   margin: 0;
 }
 .wrapper {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 body {
@@ -53,6 +53,11 @@ input[type="submit"] {
   &:active {
     background-color: $border-dark;
   }
+  @media (width <= $mobile-screen) {
+    &.view-collection {
+      width: 100%;
+    }
+  }
 }
 input.email {
   padding: 17px 32px;
@@ -75,6 +80,9 @@ input.email {
     }
     background: $border-dark;
   }
+  @media (width <= $mobile-screen) {
+    width: 100%;
+  }
 }
 article.product {
   transition: transform 0.3s;
@@ -82,7 +90,7 @@ article.product {
     transform: scale(1.03);
   }
   img {
-    width: 305px;
+    width: $product-width;
     height: 375px;
   }
   h4,

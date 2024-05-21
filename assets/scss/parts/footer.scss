@@ -1,8 +1,8 @@
-@import "../icons.scss";
+@import "../base/icons.scss";
+@import "../base/variables.scss";
 footer {
   background-color: $dark-primary;
-  min-width: $wrapper;
-  height: 380px;
+  min-height: 380px;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (width <= 1280px) {
+      padding: 40px 24px 20px;
+    }
   }
   h4 {
     margin-bottom: 12px;
@@ -21,29 +24,50 @@ footer {
     font-weight: 400;
     line-height: normal;
   }
+  .lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @media (width <= $mobile-screen) {
+      direction: rtl;
+      text-align: left;
+      gap: 90px;
+    }
+    @media (width <= 420px) {
+      direction: rtl;
+      text-align: left;
+      gap: 90px;
+    }
+  }
   article {
     &:nth-of-type(1),
     &:nth-of-type(3) {
-      margin-right: 109px;
+      @media (width > $mobile-screen) {
+        margin-right: 109px;
+      }
     }
     &:nth-of-type(2) {
-      margin-right: 133px;
+      @media (width > $mobile-screen) {
+        margin-right: 133px;
+      }
     }
     &.from-mail {
       flex: 1;
       display: flex;
       flex-direction: column;
+      @media (width <= 1280px) {
+        margin-top: 40px;
+      }
       form {
         display: flex;
         input.email {
-          width: auto;
           flex: 1;
           background-color: rgba($color: $white, $alpha: 0.15);
           padding: 17px 32px;
           border: none;
           outline: none;
           color: $white;
-          width: 354px;
+          max-width: 354px;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
@@ -61,6 +85,9 @@ footer {
             background-color: rgba($color: $white, $alpha: 0.5);
           }
         }
+      }
+      @media (width <= $mobile-screen) {
+        margin-bottom: 16px;
       }
     }
   }
@@ -89,6 +116,10 @@ footer {
   }
   .menu {
     display: flex;
+    flex-wrap: wrap;
+    @media (width > $mobile-screen) {
+      margin-bottom: 48px;
+    }
   }
   .copyright {
     p {
@@ -119,6 +150,11 @@ footer {
           height: 100%;
         }
       }
+      @media (width <= $mobile-screen) {
+        display: none;
+      }
     }
+  }
+  @media (width <= $mobile-screen) {
   }
 }
