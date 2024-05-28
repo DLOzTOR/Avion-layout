@@ -1,0 +1,73 @@
+@import "../base/variables.scss";
+.sidebar-menu {
+    padding: 20px 40px 0;
+    position: relative;
+    z-index: 9999;
+    background: white;
+    position: absolute;
+    left: 100vw;
+    top: 0;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    transition: ease-in-out 0.75s;
+    button {
+        background: none;
+        border: none;
+        background-size: cover;
+    }
+    .sidemenu-btn {
+        @media (width > $mobile-screen) {
+            display: none;
+        }
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/Icons/Menu.png");
+    }
+    @media (width > $mobile-screen) {
+        display: none;
+    }
+    &.active {
+        visibility: visible;
+        left: 0;
+    }
+    .user {
+        display: flex;
+        gap: 18px;
+        position: absolute;
+        top: 26px;
+        right: 28px;
+        align-items: center;
+    }
+    .cart-btn,
+    .user-btn {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+    }
+    .cart-btn {
+        background-image: url("../img/Icons/Shopping-cart.png");
+    }
+    .user-btn {
+        background-image: url("../img/Icons/User-avatar.png");
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+        margin: 20px 0;
+        padding: 0;
+        a {
+            li {
+                font-size: 16px;
+                color: $header-links;
+                &:visited,
+                &:active {
+                    color: $header-links;
+                }
+            }
+        }
+    }
+}

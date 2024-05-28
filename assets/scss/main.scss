@@ -15,8 +15,11 @@ hr {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 body {
+  overflow-x: hidden !important;
   font-family: "Satoshi-Regular";
 }
 h1,

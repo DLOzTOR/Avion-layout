@@ -4,7 +4,9 @@
 })
 
 <body>
+
     <div class="wrapper unselectable">
+        @@include('../pages_parts/sidebar_menu.html')
         @@include('../pages_parts/header.html')
         <div class="hero-blocks">
             <section>
@@ -22,34 +24,7 @@
         @@include('../pages_parts/features.html')
         <div class="listings margin-container">
             <div class="products">
-                <article class="product">
-                    <a>
-                        <img src="./assets/img/products/TheDandychair.jpg" alt="The Dandy chair">
-                        <h4>The Dandy chair</h4>
-                        <p>£250</p>
-                    </a>
-                </article>
-                <article class="product">
-                    <a>
-                        <img src="./assets/img/products/RusticVaseSet.jpg" alt="Rustic Vase Set">
-                        <h4>Rustic Vase Set</h4>
-                        <p>£155</p>
-                    </a>
-                </article>
-                <article class="product">
-                    <a>
-                        <img src="./assets/img/products/TheSilkyVase.jpg" alt="The Silky Vase">
-                        <h4>The Silky Vase</h4>
-                        <p>£125</p>
-                    </a>
-                </article>
-                <article class="product">
-                    <a>
-                        <img src="./assets/img/products/TheLucyLamp.png" alt="The Lucy Lamp">
-                        <h4>The Lucy Lamp</h4>
-                        <p>£399</p>
-                    </a>
-                </article>
+                @@loop('../pages_parts/product_card.html',[@@include('../assets/data/products.json',{"nesting":"."})])
             </div>
             <button class="view-collection">View collection</button>
         </div>
@@ -78,6 +53,7 @@
         </div>
     </div>
     @@include('../pages_parts/footer.html')
+    @@include('../pages_parts/js.html',{"nesting":"."})
 </body>
 
 </html>

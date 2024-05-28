@@ -47,6 +47,6 @@ exports.build = build;
 
 exports.watch = async function () {
     watch(scssLocation, buildStyles);
-    //watch(pathsHtml.src, buildHtml);
-    watch('./index.html', buildIndex);
+    watch(pathsHtml.src, buildHtml);
+    watch(pathsHtml.src+'index.html', buildIndex);
 }
