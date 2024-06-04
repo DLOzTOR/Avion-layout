@@ -1,9 +1,10 @@
 'use strict';
 
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const { watch, series } = require("gulp");
-const fileinclude = require('gulp-file-include');
+var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
+var { watch, series } = require("gulp");
+var fileinclude = require('gulp-file-include');
+
 const pagesScssLocation = "./assets/scss/pages/*.scss";
 const scssLocation = "./assets/scss/**/*.scss";
 const scssBuildLocation = "./assets/css";
@@ -41,8 +42,15 @@ async function build(){
   buildStyles();
   buildHtml();
   buildIndex();
+  buildFonts();
 }
 
+async function buildFonts(){
+  return gulp.src("./assets/fonts/*.{ttf,otf}")
+    .pipe(fontgen({
+    dest: "./assets/fonts/"
+  }));
+}
 exports.build = build;
 
 exports.watch = async function () {

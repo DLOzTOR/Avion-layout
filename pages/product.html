@@ -1,0 +1,75 @@
+@@include('../pages_parts/head.html',{
+"title":"Avion",
+"style":"../assets/css/product.css"
+})
+
+<body>
+    @@include('../pages_parts/sidebar_menu.html')
+    <div class="wrapper unselectable">
+        @@include('../pages_parts/header.html')
+        <section class="product-card">
+            <div class="background"></div>
+            <div class="content">
+                <img src="../assets/img/products/TheDandyChair-big.jpg" alt="">
+                <div class="data">
+                    <div class="title">
+                        <h1>The Dandy Chair</h1>
+                        <p>£250</p>
+                    </div>
+                    <hr>
+                    <div class="description">
+                        <h3>Product description</h3>
+                        <p>A timeless design, with premium materials features as one of our most popular and iconic
+                            pieces.
+                            The dandy chair is perfect for any stylish living space with beech legs and lambskin leather
+                            upholstery.</p>
+                    </div>
+                    <div class="dimensions">
+                        <h3>Dimensions</h3>
+                        <hr>
+                        <div class="table">
+                            <div class="colum">
+                                <h6>Height</h6>
+                                <p>110cm</p>
+                            </div>
+                            <hr>
+                            <div class="colum">
+                                <h6>Width</h6>
+                                <p>75cm</p>
+                            </div>
+                            <hr>
+                            <div class="colum">
+                                <h6>Depth</h6>
+                                <p>50cm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quantitity">
+                        <h3>Quantitity</h3>
+                        <form action="#">
+                            @@include('../pages_parts/counter.html', {"name":"count"})
+                        </form>
+                        <div class="actions">
+                            <button class="card view-collection">Add to cart</button>
+                            <form action="">
+                                <input type="submit" class="view-collection" value="Save to favorites"></input>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="listings margin-container">
+            <div class="products">
+                @@loop('../pages_parts/product_card.html',[@@include('../assets/data/products.json',{"nesting":".."})])
+            </div>
+            <button class="view-collection">View collection</button>
+        </div>
+        @@include('../pages_parts/features.html')
+
+    </div>
+    @@include('../pages_parts/footer.html')
+    @@include('../pages_parts/js.html',{"nesting":".."})
+</body>
+
+</html>

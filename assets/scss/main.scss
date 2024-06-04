@@ -2,6 +2,7 @@
 @import "./parts/header.scss";
 @import "./parts/footer.scss";
 @import "./base/variables.scss";
+@import "./base/colors.scss";
 a {
   text-decoration: none;
 }
@@ -15,12 +16,20 @@ hr {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  overflow: hidden;
   position: relative;
 }
 body {
+  color: $dark-primary;
+  background: $white;
   overflow-x: hidden !important;
   font-family: "Satoshi-Regular";
+  font-weight: 500;
+}
+@media (width <= $mobile-screen) {
+  .margin-container {
+    margin-left: $mobile-margin;
+    margin-right: $mobile-margin;
+  }
 }
 h1,
 h2,
@@ -28,7 +37,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "ClashDisplay-Light";
+  font-family: "ClashDisplay-Regular";
+  font-weight: 500;
 }
 .unselectable {
   -webkit-touch-callout: none;
@@ -85,6 +95,52 @@ input.email {
   }
   @media (width <= $mobile-screen) {
     width: 100%;
+  }
+}
+.counter {
+  font-size: 16px;
+  display: flex;
+  & > * {
+    border: none;
+  }
+  .plus,
+  .minus {
+    background: $white;
+    color: $border-gray;
+    padding: 12px 16px;
+    transition: 0.3s;
+    min-width: 43px;
+    text-align: center;
+    @media hover {
+      &:hover {
+        background: $border-gray;
+        color: $border-dark;
+      }
+    }
+
+    &:active {
+      background-color: $border-dark;
+      color: $dark-primary;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  input {
+    text-align: center;
+    width: 40px;
+    &:focus {
+      outline: none;
+      border-radius: 0;
+    }
+    @media (width <= $mobile-screen) {
+      width: 100%;
+    }
   }
 }
 article.product {

@@ -1,0 +1,10 @@
+@mixin purple-btn {
+    background-color: $dark-primary;
+    color: white;
+    &:hover {
+        background-color: color-mix(in srgb, $dark-primary 70%, black);
+    }
+    &:active {
+        background-color: color-mix(in srgb, $dark-primary 50%, black);
+    }
+}

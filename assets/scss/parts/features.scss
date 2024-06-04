@@ -1,0 +1,95 @@
+.features {
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 82px;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 36px;
+        display: flex;
+        gap: 22px;
+        h2,
+        h3 {
+            font-family: "ClashDisplay-Regular";
+        }
+        h2,
+        h3,
+        p {
+            color: $dark-primary;
+        }
+        h2 {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+        }
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 305px;
+            height: 244px;
+            background: $light-gray;
+            padding: 48px;
+            h4,
+            p {
+                margin: 0;
+            }
+            h4 {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+            }
+            p {
+                font-family: "Satoshi-Regular";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+            }
+            .icon {
+                width: 24px;
+                height: 24px;
+                background-size: cover;
+            }
+            &.delivery {
+                .icon {
+                    background-image: url("../img/Icons/Delivery.png");
+                }
+            }
+            &.checkmark {
+                .icon {
+                    background-image: url("../img/Icons/Checkmark-outline.png");
+                }
+            }
+            &.purchase {
+                .icon {
+                    background-image: url("../img/Icons/Purchase.png");
+                }
+            }
+            &.sprout {
+                .icon {
+                    background-image: url("../img/Icons/Sprout.png");
+                }
+            }
+            @media (width <= $mobile-screen) {
+                width: 100%;
+                padding: 36px 24px;
+                height: 196px;
+            }
+        }
+    }
+    @media (width <= $mobile-screen) {
+        & > h2 {
+            font-size: 20px;
+            margin-right: 68px;
+        }
+        margin-top: 48px;
+        margin-bottom: 50px;
+    }
+}

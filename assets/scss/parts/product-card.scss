@@ -1,0 +1,166 @@
+@import "../base/variables.scss";
+@import "../base/colors.scss";
+@import "../base/mixins.scss";
+.product-card {
+    position: relative;
+    .content {
+        height: 100%;
+        padding: 50px 47px 80px;
+        display: flex;
+        gap: 65px;
+        img {
+            object-fit: cover;
+            @media (width > $mobile-screen) {
+                height: 661px;
+            }
+        }
+        .data {
+            margin-top: 31px;
+            h3 {
+                font-size: 16px;
+            }
+            .title {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 28px;
+                h1 {
+                    font-size: 36px;
+                    line-height: 44px;
+                    @media (width <= $mobile-screen) {
+                        font-size: 24px;
+                        line-height: 140%;
+                    }
+                }
+                p {
+                    font-size: 24px;
+                    @media (width <= $mobile-screen) {
+                        font-size: 20px;
+                        line-height: 140%;
+                    }
+                }
+                @media (width <= $mobile-screen) {
+                    gap: 12px;
+                }
+            }
+            & > hr,
+            .dimensions > hr {
+                border-color: $border-gray;
+                max-width: 518px;
+                border-top: 1px;
+            }
+            & > hr {
+                margin-bottom: 20px;
+            }
+            .description {
+                max-width: 498px;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                p {
+                    font-size: 16px;
+                    @media (width <= $mobile-screen) {
+                        font-size: 14px;
+                    }
+                }
+                margin-bottom: 36px;
+            }
+            .dimensions {
+                & > hr {
+                    @media (width > $mobile-screen) {
+                        display: none;
+                    }
+                    margin-bottom: 21px;
+                }
+                h3 {
+                    margin-bottom: 6px;
+                    @media (width > $mobile-screen) {
+                        margin-bottom: 24px;
+                    }
+                }
+                .table {
+                    display: flex;
+                    align-items: center;
+                    .colum {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        h6 {
+                            margin: 0;
+                            font-size: 14px;
+                        }
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                    & > hr {
+                        height: 44px;
+                        border-color: $border-gray;
+                        border-left: 1px;
+                        margin: 0 49.25px;
+                        @media (width <= $mobile-screen) {
+                            margin: 0;
+                        }
+                    }
+                    @media (width <= $mobile-screen) {
+                        margin: 0;
+                        justify-content: space-between;
+                    }
+                }
+                margin-bottom: 40px;
+            }
+            .quantitity {
+                .counter {
+                    margin-bottom: 48px;
+                    @media (width <= $mobile-screen) {
+                        margin-bottom: 24px;
+                    }
+                }
+                h3 {
+                    margin-bottom: 12px;
+                }
+                .actions {
+                    display: flex;
+                    gap: 16px;
+                    button {
+                        @include purple-btn;
+                    }
+                    input[type="submit"] {
+                        background: white;
+                        &:hover {
+                            background-color: $border-gray;
+                        }
+                        &:active {
+                            background-color: $border-dark;
+                        }
+                    }
+                    @media (width <= $mobile-screen) {
+                        flex-direction: column;
+                    }
+                }
+            }
+            @media (width <= $mobile-screen) {
+                padding: 28px 24px 30px;
+                margin: 0;
+            }
+        }
+        @media (width <= 1150px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media (width <= $mobile-screen) {
+            padding: 0;
+            gap: 0;
+        }
+    }
+    .background {
+        position: absolute;
+        @media (width >= 1440px) {
+            left: calc((100vw - 1440px) / -2);
+        }
+        z-index: -1;
+        height: 100%;
+        width: 100vw;
+        background-color: $light-gray;
+    }
+}

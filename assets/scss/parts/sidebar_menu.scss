@@ -1,4 +1,13 @@
 @import "../base/variables.scss";
+.sidebar-menu-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    background: none;
+    height: 100vh;
+}
 .sidebar-menu {
     padding: 20px 40px 0;
     position: relative;
@@ -10,7 +19,7 @@
     visibility: hidden;
     width: 100vw;
     height: 100vh;
-    transition: ease-in-out 0.75s;
+    transition: ease-in-out 0.5s;
     button {
         background: none;
         border: none;

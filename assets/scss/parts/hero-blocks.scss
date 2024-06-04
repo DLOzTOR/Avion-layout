@@ -1,0 +1,61 @@
+.hero-blocks {
+    position: relative;
+    background-size: cover;
+    figure {
+        width: 100%;
+        height: 704px;
+        overflow: hidden;
+        margin: 0;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        @media (width <= $mobile-screen) {
+            height: 304px;
+            margin-top: 32px;
+        }
+    }
+    section {
+        position: absolute;
+        top: 130px;
+        right: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 48px 61px 46px 56px;
+        max-width: 630px;
+        height: 444px;
+        background: white;
+        h1 {
+            font-size: 32px;
+            line-height: 140%;
+            color: #22202e;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #5b5676;
+            font-size: 18px;
+            line-height: 150%;
+        }
+        @media (width <= $mobile-screen) {
+            position: static;
+            top: 0;
+            right: 0;
+            max-width: none;
+            width: 100%;
+            height: auto;
+            padding: 0 25px 0;
+            div {
+                margin-bottom: 32px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

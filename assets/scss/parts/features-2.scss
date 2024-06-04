@@ -1,0 +1,78 @@
+.features-2 {
+    justify-content: center;
+    display: flex;
+    gap: 16px;
+    margin: 60px 0;
+    @media (width <= 1300px) {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    section {
+        color: $white;
+        width: 634px;
+        height: 478px;
+        background-color: $dark-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 64px 75px 54px 64px;
+        h2 {
+            font-family: "ClashDisplay-Light";
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @media (width <= $mobile-screen) {
+                font-size: 20px;
+            }
+            margin-bottom: 12px;
+        }
+        p {
+            font-family: "Satoshi-Light";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 1px;
+            @media (width <= $mobile-screen) {
+                font-size: 14px;
+            }
+        }
+        button.view-collection {
+            color: $white;
+            background: rgba($color: $white, $alpha: 0.15);
+            &:hover {
+                background: rgba($color: $white, $alpha: 0.3);
+            }
+            &:active {
+                background: rgba($color: $white, $alpha: 0.45);
+            }
+        }
+        @media (width <= $mobile-screen) {
+            width: 100%;
+            height: 281px;
+            padding: 36px 32px 30px;
+        }
+    }
+    div.features-2-image {
+        width: 630px;
+        height: 478px;
+        background-size: cover;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (width <= 1300px) {
+            width: 634px;
+        }
+        @media (width <= $mobile-screen) {
+            width: 100%;
+            height: 259px;
+        }
+    }
+    @media (width <= $mobile-screen) {
+        margin-bottom: 32px;
+    }
+}

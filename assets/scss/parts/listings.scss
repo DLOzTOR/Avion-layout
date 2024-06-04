@@ -1,0 +1,68 @@
+.listings {
+    margin-top: 28px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > div {
+        $i: $product-main-max;
+        @while $i > 1 {
+            @media (width <= $i * $product-width + ($i - 1) * $product-gap-main) {
+                @if ($i * $product-width + ($i - 1) * $product-gap-main > $mobile-screen) {
+                    @if (($i - 2) >= 0) {
+                        max-width: ($i - 1) * $product-width + ($i - 2) * $product-gap-main;
+                    } @else {
+                        max-width: ($i - 1) * $product-width;
+                    }
+                }
+            }
+            $i: $i - 1;
+        }
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+        margin-bottom: 48px;
+        @media (width <= $mobile-screen) {
+            gap: 16px;
+            $i: $product-main-max + 1;
+            @while $i > 0 {
+                @if (
+                    $mobile-screen <
+                        ($i + 1) *
+                        $product-width-mobile-main +
+                        $i *
+                        $product-gap-mobile-main +
+                        2 *
+                        $mobile-margin
+                ) {
+                    @if ($mobile-screen >= $i * $product-width-mobile-main + ($i - 1) * $product-gap-mobile-main) {
+                        max-width: ($i - 1) * $product-width-mobile-main + ($i - 2) * $product-gap-mobile-main;
+                    }
+                }
+                $i: $i - 1;
+            }
+            $i: $product-main-max + 1;
+            @while $i > 1 {
+                @media (width <= $i * $product-width-mobile-main + ($i - 1) * $product-gap-mobile-main + 2 * $mobile-margin - 1) {
+                    @if (($i - 2) >= 0) {
+                        max-width: ($i - 1) * $product-width-mobile-main + ($i - 2) * $product-gap-mobile-main;
+                    } @else {
+                        max-width: ($i - 1) * $product-width-mobile-main;
+                    }
+                }
+                $i: $i - 1;
+            }
+            article.product {
+                width: $product-width-mobile-main;
+                img {
+                    width: 100%;
+                    height: 201px;
+                }
+            }
+        }
+    }
+    @media (width <= $mobile-screen) {
+        margin-top: 24px;
+    }
+}
