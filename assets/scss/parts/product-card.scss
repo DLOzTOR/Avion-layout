@@ -1,6 +1,9 @@
 @import "../base/variables.scss";
 @import "../base/colors.scss";
 @import "../base/mixins.scss";
+header > div {
+    margin-bottom: 0;
+}
 .product-card {
     position: relative;
     .content {
